@@ -1,28 +1,29 @@
 saveButton = $(".saveBtn");
+deleteButton = $(".delBtn");
 textArea = $("textarea");
 timeBlock = $(".time-block");
 
 $("#currentDay").text(moment().format("dddd, MMMM Do"));
 
-var hourNine = $("#nine");
-var hourTen = $("#ten");
-var hourEleven = $("#eleven");
-var hourTwelve = $("#twelve");
-var hourOne = $("#one");
-var hourTwo = $("#two");
-var hourThree = $("#three");
-var hourFour = $("#four");
-var hourFive = $("#five");
+let hourNine = $("#nine");
+let hourTen = $("#ten");
+let hourEleven = $("#eleven");
+let hourTwelve = $("#twelve");
+let hourOne = $("#one");
+let hourTwo = $("#two");
+let hourThree = $("#three");
+let hourFour = $("#four");
+let hourFive = $("#five");
 
-var textInputNine = localStorage.getItem("inputOne");
-var textInputTen = localStorage.getItem("inputTwo");
-var textInputEleven = localStorage.getItem("inputThree");
-var textInputTwelve = localStorage.getItem("inputFour");
-var textInputOne = localStorage.getItem("inputFive");
-var textInputTwo = localStorage.getItem("inputSix");
-var textInputThree = localStorage.getItem("inputSeven");
-var textInputFour = localStorage.getItem("inputEight");
-var textInputFive = localStorage.getItem("inputNine");
+let textInputNine = localStorage.getItem("inputOne");
+let textInputTen = localStorage.getItem("inputTwo");
+let textInputEleven = localStorage.getItem("inputThree");
+let textInputTwelve = localStorage.getItem("inputFour");
+let textInputOne = localStorage.getItem("inputFive");
+let textInputTwo = localStorage.getItem("inputSix");
+let textInputThree = localStorage.getItem("inputSeven");
+let textInputFour = localStorage.getItem("inputEight");
+let textInputFive = localStorage.getItem("inputNine");
 
 function loadSaved(){
   hourNine.text(textInputNine)
@@ -48,6 +49,10 @@ function saveToLocal(event) {
   localStorage.setItem("inputNine", hourFive.val());
 }
 
+// function delete(event){
+
+// }
+
 
 function textBG() {
   var currentHour = moment().format("H");
@@ -68,6 +73,7 @@ function textBG() {
   }
 }
 saveButton.on("click", saveToLocal);
+// deleteButton.on("click", delete())
 loadSaved();
 saveToLocal();
 textBG();
