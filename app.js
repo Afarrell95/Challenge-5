@@ -49,9 +49,26 @@ function saveToLocal(event) {
   localStorage.setItem("inputNine", hourFive.val());
 }
 
-// function delete(event){
-
-// }
+function deleted(event){
+  textInputNine = '';
+textInputTen = '';
+textInputEleven = '';
+textInputTwelve = '';
+textInputOne = '';
+textInputTwo = '';
+textInputThree = '';
+textInputFour = '';
+textInputFive = '';
+  localStorage.setItem("inputOne", '');
+  localStorage.setItem("inputTwo", '');
+  localStorage.setItem("inputThree", '');
+  localStorage.setItem("inputFour", '');
+  localStorage.setItem("inputFive", '');
+  localStorage.setItem("inputSix", '');
+  localStorage.setItem("inputSeven", '');
+  localStorage.setItem("inputEight", '');
+  localStorage.setItem("inputNine", '');
+}
 
 
 function textBG() {
@@ -73,7 +90,7 @@ function textBG() {
   }
 }
 saveButton.on("click", saveToLocal);
-// deleteButton.on("click", delete())
+deleteButton.on("click", deleted)
 loadSaved();
 saveToLocal();
 textBG();
